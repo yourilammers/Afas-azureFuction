@@ -73,7 +73,8 @@ def query_pipelines(company_name):
             pipelines.append({
                 "name": entity.get("PipelineName"),
                 "link": entity.get("PipelineLink"),
-                "description": entity.get("PipelineDescription")
+                "description": entity.get("PipelineDescription"),
+                "inputFieldInstructions": json.loads(entity.get("InputFieldInstructions", "{}"))
             })
 
         logging.info(f"Pipelines: {pipelines}")
